@@ -1,4 +1,4 @@
-#define waktutunda 10 //untuk 10 detik
+#define waktutunda 15 //untuk 10 detik
  
 const int ledPin = 13; //Menggunakan led built in Arduino
 const int SensorPir = 2; //menggunakan pin ke-2 arduino
@@ -21,6 +21,8 @@ void loop() {
   now = millis();
   if(waktumulai && (now - TriggerAkhir > (waktutunda*1000))) {
     Serial.println("Tidak ada gerakan!");
+    delay(10000);
+    Serial.println("waktu jeda");
     digitalWrite(ledPin, HIGH);
     Serial.println("Air Keluar!");
     waktumulai = false;
